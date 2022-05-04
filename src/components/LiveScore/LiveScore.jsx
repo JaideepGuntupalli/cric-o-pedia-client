@@ -8,7 +8,9 @@ function LiveScore() {
     const params = useParams();
     const id = params.id;
     const { data, isSuccess } = useQuery("home-matches", async () => {
-        return await axios.get(`http://localhost:8080/score?matchId=${id}`);
+        return await axios.get(
+            ` https://frozen-brook-98254.herokuapp.com/score?matchId=${id}`
+        );
     });
     // console.log(data.data);
     return (

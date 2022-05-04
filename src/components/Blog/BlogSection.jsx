@@ -4,7 +4,9 @@ import axios from "axios";
 
 function BlogSection() {
     const { data, isSuccess } = useQuery("news-articles", async () => {
-        return await axios.get("http://localhost:8080/news");
+        return await axios.get(
+            " https://frozen-brook-98254.herokuapp.com/news"
+        );
     });
 
     let key = 0;
