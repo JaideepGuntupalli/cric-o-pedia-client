@@ -5,8 +5,6 @@ import { useAuth } from "./../../contexts/AuthContext";
 function LiveChat({ socket, username, room }) {
     const { currentUser } = useAuth();
 
-    let name = currentUser.email;
-
     const [currentMessage, setCurrentMessage] = useState("");
     const [messageList, setMessageList] = useState([]);
 
@@ -55,7 +53,7 @@ function LiveChat({ socket, username, room }) {
                                     <div className="message-meta font-bold text-gray-400 text-lg">
                                         <p id="author">
                                             {currentUser
-                                                ? name
+                                                ? currentUser.email
                                                 : messageContent.author}
                                         </p>
                                     </div>
