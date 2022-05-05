@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
-import { useAuth } from "./../../contexts/AuthContext";
 
 function LiveChat({ socket, username, room }) {
-    const { currentUser } = useAuth();
-
     const [currentMessage, setCurrentMessage] = useState("");
     const [messageList, setMessageList] = useState([]);
 
@@ -52,9 +49,7 @@ function LiveChat({ socket, username, room }) {
                                 <div className="flex flex-col">
                                     <div className="message-meta font-bold text-gray-400 text-lg">
                                         <p id="author">
-                                            {currentUser
-                                                ? currentUser.email
-                                                : messageContent.author}
+                                            {messageContent.author}
                                         </p>
                                     </div>
                                     <div className="message-content">

@@ -4,6 +4,7 @@ import React from "react";
 // import axios from "axios";
 import Poll from "./Poll";
 import LiveChat from "./LiveChat";
+import { useAuth } from "./../../contexts/AuthContext";
 import LiveComm from "./LiveComm";
 import "./index.css";
 import io from "socket.io-client";
@@ -12,6 +13,7 @@ const socket = io.connect("https://frozen-hamlet-50888.herokuapp.com");
 socket.emit("join_room", "1");
 
 function LiveScore() {
+    const { currentUser } = useAuth();
     // const params = useParams();
     // const id = params.id;
     // const { data, isSuccess } = useQuery("home-matches", async () => {
@@ -60,7 +62,11 @@ function LiveScore() {
             </div>
             <Poll />
 
-            <LiveChat socket={socket} username="guest" room="1" />
+            <LiveChat
+                socket={socket}
+                username={currentUser ? currentUser.email : "guest"}
+                room="1"
+            />
 
             <LiveComm />
 
