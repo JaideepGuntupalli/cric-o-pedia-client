@@ -1,5 +1,5 @@
 import React from "react";
-import Poll from "../Other/Poll";
+import Poll from "../LiveScore/Poll";
 
 function FactsSection() {
     return (
@@ -12,12 +12,12 @@ function FactsSection() {
 
             <div className="bg-widget-bg p-4 rounded-xl">
                 <img
-                    src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_640,q_50/lsci/db/PICTURES/CMS/228800/228895.4.jpg"
-                    alt="On This Day: Happy birthday, James Pattinson"
+                    src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_640,q_50/lsci/db/PICTURES/CMS/264600/264647.4.jpg"
+                    alt="On This Day: Deandra Dottin hits the first women's T20I ton"
                     className="rounded-lg"
                 />
                 <p className="px-4 text-white pt-2">
-                    On This Day: Wasim's Akram's second ODI hat-trick
+                    On This Day: Deandra Dottin hits the first women's T20I ton
                 </p>
             </div>
 

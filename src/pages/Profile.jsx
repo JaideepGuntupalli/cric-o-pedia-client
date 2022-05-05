@@ -26,7 +26,6 @@ function Profile() {
                 <title>Profile | Cric-o-pedia</title>
             </Helmet>
             <div className="w-4/5 mx-auto text-white">
-                <p>Name: {currentUser.name}</p>
                 <p>Email: {currentUser.email}</p>
                 <button
                     onClick={handleLogout}

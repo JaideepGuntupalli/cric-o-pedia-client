@@ -16,7 +16,7 @@ function Poll() {
                     onClick={handleClick}
                 >
                     <img
-                        src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_160,q_50/lsci/db/PICTURES/CMS/313400/313418.logo.png"
+                        src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_160,q_50/lsci/db/PICTURES/CMS/313400/313422.logo.png"
                         alt=""
                         className="h-20"
                     />
@@ -28,13 +28,15 @@ function Poll() {
                     onClick={handleClick}
                 >
                     <img
-                        src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_160,q_50/lsci/db/PICTURES/CMS/313400/313418.logo.png"
-                        alt=""
+                        src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_160,q_50/lsci/db/PICTURES/CMS/313400/313480.logo.png"
+                        alt="Sunrisers Hyderabad logo"
                         className="h-20"
                     />
                 </button>
             </div>
-            <p className="mt-2 text-center">Support your favourite Team</p>
+            <p className="mt-2 text-center">
+                Support your favourite Team for tonight clash
+            </p>
         </div>
     );
 }

@@ -15,7 +15,7 @@ function PreMatch({
 }) {
     return (
         <Link
-            to={`score/${id}`}
+            to="#"
             className="bg-widget-bg flex gap-4 flex-col items-start rounded-lg p-6 w-1/5"
         >
             <Pill status="pre" startTime={startTime} />

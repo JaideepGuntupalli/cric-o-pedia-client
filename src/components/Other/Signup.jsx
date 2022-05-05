@@ -5,6 +5,9 @@ import { Link, useNavigate } from "react-router-dom";
 import Logo from "../Nav/Logo";
 import Alert from "./Alert";
 import cricket from "../../assets/cricket.png";
+import { getAuth, updateProfile } from "firebase/auth";
+
+const auth = getAuth();
 
 function Signup() {
     const [name, setName] = useState("");
@@ -22,6 +25,10 @@ function Signup() {
             setError("");
             setLoading(true);
             await signup(name, email, pass);
+            await updateProfile(auth.currentUser, {
+                displayName: name.toString(),
+                photoURL: "https://picsum.photos/200/200.webp",
+            });
             navigate("/profile");
         } catch (error) {
             setError(
