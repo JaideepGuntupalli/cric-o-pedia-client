@@ -49,7 +49,21 @@ function MatchSection() {
                                   />
                               );
                           } else {
-                              return <LiveMatch />;
+                              return (
+                                  <LiveMatch
+                                      id={ele.id}
+                                      slug={ele.slug}
+                                      statusText={ele.statusText}
+                                      team1Score={ele.teams[0].score}
+                                      team1scoreInfo={ele.teams[0].scoreInfo}
+                                      teamUrl1={ele.teams[0].image.url}
+                                      caption1={ele.teams[0].image.caption}
+                                      team2Score={ele.teams[1].score}
+                                      team2scoreInfo={ele.teams[1].scoreInfo}
+                                      teamUrl2={ele.teams[1].image.url}
+                                      caption2={ele.teams[1].image.caption}
+                                  />
+                              );
                           }
                       })
                     : console.log("waiting..")}
