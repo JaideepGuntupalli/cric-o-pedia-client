@@ -22,10 +22,9 @@ function Footer() {
             </div>
             <div className="flex flex-col gap-2">
                 <h3 className="text-white/40 font-semibold">SiteMap</h3>
-                <NavItem name="Matches" />
-                <NavItem name="Tournaments" />
-                <NavItem name="Players" />
-                <NavItem name="Teams" />
+                <NavItem name="Login" to="login" />
+                <NavItem name="SignUp" to="signup" />
+                <NavItem name="Profile" to="profile" />
             </div>
         </footer>
     );

@@ -29,7 +29,7 @@ function PreMatch({
                     <p className="text-white font-mulish">{team2Abbr}</p>
                 </div>
             </div>
-            <div className="text-white">{statusText}</div>
+            <div className="text-white">Match yet to begin</div>
         </Link>
     );
 }

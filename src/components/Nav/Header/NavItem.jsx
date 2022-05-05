@@ -1,11 +1,13 @@
-function NavItem({ name }) {
+import { Link } from "react-router-dom";
+
+function NavItem({ name, to }) {
     return (
-        <a
-            href="https://www.cricbuzz.com/"
+        <Link
+            to={to ? to : "#"}
             className="text-white opacity-40 hover:opacity-100 navitem"
         >
             {name}
-        </a>
+        </Link>
     );
 }
 

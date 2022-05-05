@@ -5829,7 +5829,7 @@ strong {
 }
 .rv-xy-plot__series--line {
     fill: none;
-    stroke: #000;
+
     stroke-width: 2px;
 }
 .rv-crosshair {

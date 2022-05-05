@@ -85,7 +85,7 @@ function LiveScore() {
                             </span>
                             <div class="ds-flex ds-items-center">
                                 <div class="ds-flex">
-                                    <span class="ds-text-tight-s ds-font-bold ds-text-typo-link">
+                                    <span class="text-yellow-500 ds-text-tight-s ds-font-bold ">
                                         56 runs&nbsp;
                                     </span>
                                     <span class="ds-text-tight-s ds-font-regular ds-text-typo-paragraph-light">
@@ -280,7 +280,7 @@ function LiveScore() {
                         </span>
                         <div class="ds-flex ds-items-center ds-justify-between">
                             <div class="ds-flex">
-                                <span class="text-xs ds-font-bold  text-yellow-600">
+                                <span class="text-xs ds-font-bold  text-yellow-500">
                                     42 runs&nbsp;
                                 </span>
                                 <span class="text-xs ds-font-regular ds-text-typo-paragraph-light">
@@ -797,14 +797,14 @@ function LiveScore() {
                             <span class="ds-pl-2">
                                 <div class="ds-flex">
                                     <div class="ds-flex ds-items-center ds-mr-4">
-                                        <span class="ds-w-4 ds-h-4 ds-rounded-full ds-inline-flex"></span>
-                                        <span class="ds-pl-2 ds-text-tight-s">
+                                        <span class="ds-w-4 ds-h-4 ds-rounded-full ds-inline-flex bg-red-500"></span>
+                                        <span class="ds-pl-2 ds-text-tight-s text-black">
                                             Royal Challengers Bangalore
                                         </span>
                                     </div>
                                     <div class="ds-flex ds-items-center ds-mr-4">
-                                        <span class="ds-w-4 ds-h-4 ds-rounded-full ds-inline-flex"></span>
-                                        <span class="ds-pl-2 ds-text-tight-s">
+                                        <span class="ds-w-4 ds-h-4 ds-rounded-full ds-inline-flex bg-yellow-500"></span>
+                                        <span class="ds-pl-2 ds-text-tight-s text-black">
                                             Chennai Super Kings
                                         </span>
                                     </div>
@@ -856,12 +856,12 @@ function LiveScore() {
                                         </g>
                                         <path
                                             d="M0,250L32,241.32947976878614L64,229.76878612716763L96,221.09826589595377L128,202.3121387283237L160,176.30057803468208L192,167.63005780346822L224,160.40462427745666L256,154.6242774566474L288,140.17341040462426L320,135.83815028901736L352,128.61271676300578L384,112.71676300578035L416,106.9364161849711L448,91.04046242774567L480,72.2543352601156L512,60.69364161849711L544,52.02312138728324L576,26.011560693641606L608,23.121387283236984L640,0"
-                                            class="rv-xy-plot__series rv-xy-plot__series--line "
+                                            class="stroke-red-500 rv-xy-plot__series rv-xy-plot__series--line "
                                             transform="translate(40,10)"
                                         ></path>
                                         <path
                                             d="M0,250L32,236.9942196531792L64,232.65895953757226L96,218.20809248554912L128,213.8728323699422L160,196.53179190751447L192,176.30057803468208L224,164.7398843930636L256,160.40462427745666L288,145.95375722543352L320,138.72832369942196L352,127.16763005780346L384,117.0520231213873L416,102.60115606936415L448,92.48554913294798L480,79.47976878612717L512,73.69942196531792L544,66.47398843930635L576,54.91329479768786L608,43.35260115606937L640,18.786127167630063"
-                                            class="rv-xy-plot__series rv-xy-plot__series--line "
+                                            class="stroke-yellow-500 rv-xy-plot__series rv-xy-plot__series--line "
                                             transform="translate(40,10)"
                                         ></path>
                                         <g
