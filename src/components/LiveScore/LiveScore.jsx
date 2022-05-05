@@ -811,6 +811,12 @@ function LiveScore() {
                             <span class="ds-pl-2">
                                 <div class="ds-flex">
                                     <div class="ds-flex ds-items-center ds-mr-4">
+                                        <span class="ds-w-4 ds-h-4 ds-rounded-full ds-inline-flex bg-white"></span>
+                                        <span class="ds-pl-2 ds-text-tight-s">
+                                            Wickets
+                                        </span>
+                                    </div>
+                                    <div class="ds-flex ds-items-center ds-mr-4">
                                         <span class="ds-w-4 ds-h-4 ds-rounded-full ds-inline-flex bg-red-500"></span>
                                         <span class="ds-pl-2 ds-text-tight-s">
                                             Royal Challengers Bangalore
