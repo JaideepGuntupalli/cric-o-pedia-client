@@ -556,7 +556,7 @@ function LiveScore() {
                                         LEG
                                     </span>
                                 </div>
-                                <div class="ds-text-tight-xs ds-font-bold ds-w-[106px] ds-py-1.5 ds-bg-fill-content-alternate ds-text-center">
+                                <div class="text-black ds-text-tight-xs ds-font-bold ds-w-[106px] ds-py-1.5 ds-bg-fill-content-alternate ds-text-center">
                                     RHB
                                 </div>
                             </div>
@@ -680,7 +680,7 @@ function LiveScore() {
                                         OFF
                                     </span>
                                 </div>
-                                <div class="ds-text-tight-xs ds-font-bold ds-w-[106px] ds-py-1.5 ds-bg-fill-content-alternate ds-text-center">
+                                <div class="text-black ds-text-tight-xs ds-font-bold ds-w-[106px] ds-py-1.5 ds-bg-fill-content-alternate ds-text-center">
                                     LHB
                                 </div>
                             </div>
