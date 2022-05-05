@@ -142,6 +142,8 @@ function LiveScore() {
                             >
                                 <g>
                                     <circle
+                                        stroke="white"
+                                        fill="white"
                                         class="ds-fill-ui-stroke"
                                         cx="66.51"
                                         cy="66.51"
@@ -257,6 +259,8 @@ function LiveScore() {
                                         10
                                     </text>
                                     <circle
+                                        stroke="white"
+                                        fill="white"
                                         class="ds-fill-[transparent] ds-stroke-ui-stroke ds-stroke-1"
                                         cx="66.51"
                                         cy="66.51"
@@ -337,6 +341,8 @@ function LiveScore() {
                         >
                             <g>
                                 <circle
+                                    stroke="white"
+                                    fill="white"
                                     class="ds-fill-ui-stroke"
                                     cx="66.51"
                                     cy="66.51"
@@ -452,6 +458,8 @@ function LiveScore() {
                                     10
                                 </text>
                                 <circle
+                                    stroke="white"
+                                    fill="white"
                                     class="ds-fill-[transparent] ds-stroke-ui-stroke ds-stroke-1"
                                     cx="66.51"
                                     cy="66.51"
@@ -793,10 +801,10 @@ function LiveScore() {
 
             <div className=" col-span-2 row-span-2 bg-widget-bg p-3 rounded-xl">
                 <div class="ds-w-full ds-bg-fill-content-prime ds-overflow-hidden ds-rounded-xl ds-border ds-border-line ds-mb-4">
-                    <div class="ds-flex ds-px-4 ds-border-b ds-border-line ds-py-3">
+                    <div class="bg-gray-700 ds-flex ds-px-4 ds-border-b ds-border-line ds-py-3">
                         <div class="ds-flex ds-flex-col ds-grow ds-justify-center">
                             <span class="ds-text-title-xs ds-font-bold ds-text-typo-title">
-                                <span>Worm</span>
+                                <span className="text-white">Worm</span>
                             </span>
                         </div>
                         <div class="ds-flex ds-flex-row ds-items-center">
@@ -804,13 +812,13 @@ function LiveScore() {
                                 <div class="ds-flex">
                                     <div class="ds-flex ds-items-center ds-mr-4">
                                         <span class="ds-w-4 ds-h-4 ds-rounded-full ds-inline-flex bg-red-500"></span>
-                                        <span class="ds-pl-2 ds-text-tight-s text-black">
+                                        <span class="ds-pl-2 ds-text-tight-s">
                                             Royal Challengers Bangalore
                                         </span>
                                     </div>
                                     <div class="ds-flex ds-items-center ds-mr-4">
                                         <span class="ds-w-4 ds-h-4 ds-rounded-full ds-inline-flex bg-yellow-500"></span>
-                                        <span class="ds-pl-2 ds-text-tight-s text-black">
+                                        <span class="ds-pl-2 ds-text-tight-s">
                                             Chennai Super Kings
                                         </span>
                                     </div>
@@ -818,7 +826,7 @@ function LiveScore() {
                             </span>
                         </div>
                     </div>
-                    <div class="ds-p-4 bg-transparent">
+                    <div class="ds-p-4 bg-gray-700">
                         <div class="ci-chart-container">
                             <div>
                                 <div class="rv-xy-plot ">
@@ -875,41 +883,57 @@ function LiveScore() {
                                             transform="translate(40,10)"
                                         >
                                             <circle
+                                                stroke="white"
+                                                fill="white"
                                                 r="3.5"
                                                 cx="256"
                                                 cy="154.6242774566474"
                                             ></circle>
                                             <circle
+                                                stroke="white"
+                                                fill="white"
                                                 r="3.5"
                                                 cx="288"
                                                 cy="140.17341040462426"
                                             ></circle>
                                             <circle
+                                                stroke="white"
+                                                fill="white"
                                                 r="3.5"
                                                 cx="320"
                                                 cy="135.83815028901736"
                                             ></circle>
                                             <circle
+                                                stroke="white"
+                                                fill="white"
                                                 r="3.5"
                                                 cx="512"
                                                 cy="60.69364161849711"
                                             ></circle>
                                             <circle
+                                                stroke="white"
+                                                fill="white"
                                                 r="3.5"
                                                 cx="608"
                                                 cy="23.121387283236984"
                                             ></circle>
                                             <circle
+                                                stroke="white"
+                                                fill="white"
                                                 r="3.5"
                                                 cx="608"
                                                 cy="22.39884393063585"
                                             ></circle>
                                             <circle
+                                                stroke="white"
+                                                fill="white"
                                                 r="3.5"
                                                 cx="608"
                                                 cy="21.676300578034684"
                                             ></circle>
                                             <circle
+                                                stroke="white"
+                                                fill="white"
                                                 r="3.5"
                                                 cx="640"
                                                 cy="0"
@@ -920,41 +944,57 @@ function LiveScore() {
                                             transform="translate(40,10)"
                                         >
                                             <circle
+                                                stroke="white"
+                                                fill="white"
                                                 r="3.5"
                                                 cx="224"
                                                 cy="164.7398843930636"
                                             ></circle>
                                             <circle
+                                                stroke="white"
+                                                fill="white"
                                                 r="3.5"
                                                 cx="256"
                                                 cy="160.40462427745666"
                                             ></circle>
                                             <circle
+                                                stroke="white"
+                                                fill="white"
                                                 r="3.5"
                                                 cx="320"
                                                 cy="138.72832369942196"
                                             ></circle>
                                             <circle
+                                                stroke="white"
+                                                fill="white"
                                                 r="3.5"
                                                 cx="480"
                                                 cy="79.47976878612717"
                                             ></circle>
                                             <circle
+                                                stroke="white"
+                                                fill="white"
                                                 r="3.5"
                                                 cx="512"
                                                 cy="73.69942196531792"
                                             ></circle>
                                             <circle
+                                                stroke="white"
+                                                fill="white"
                                                 r="3.5"
                                                 cx="576"
                                                 cy="54.91329479768786"
                                             ></circle>
                                             <circle
+                                                stroke="white"
+                                                fill="white"
                                                 r="3.5"
                                                 cx="608"
                                                 cy="43.35260115606937"
                                             ></circle>
                                             <circle
+                                                stroke="white"
+                                                fill="white"
                                                 r="3.5"
                                                 cx="640"
                                                 cy="18.786127167630063"
