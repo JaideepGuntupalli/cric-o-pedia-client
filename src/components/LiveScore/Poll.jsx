@@ -1,19 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Poll() {
-    let hasVoted = false;
+    const [hasVoted, setHasVoted] = useState(false);
+    const [isBlue, setIsBlue] = useState(false);
 
-    function handleClick(e) {
+    function handleClick1(e) {
         e.preventDefault();
-        hasVoted = true;
+        setHasVoted(true);
+        setIsBlue(true);
+        console.log("lol");
+    }
+
+    function handleClick2(e) {
+        e.preventDefault();
+        setHasVoted(true);
+        setIsBlue(false);
     }
     return (
-        <div className="bg-widget-bg p-4 rounded-xl text-white">
+        <div
+            className={
+                " p-4 rounded-xl text-white " +
+                (hasVoted
+                    ? isBlue
+                        ? "bg-blue-600"
+                        : "bg-orange-500"
+                    : "bg-widget-bg")
+            }
+        >
             <div className="flex items-center justify-around">
                 <button
-                    disabled={hasVoted}
                     className="hover:bg-black p-2 rounded-full"
-                    onClick={handleClick}
+                    onClick={handleClick1}
                 >
                     <img
                         src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_160,q_50/lsci/db/PICTURES/CMS/313400/313422.logo.png"
@@ -23,9 +40,8 @@ function Poll() {
                 </button>
                 <p>vs</p>
                 <button
-                    disabled={hasVoted}
                     className="hover:bg-black p-2 rounded-full"
-                    onClick={handleClick}
+                    onClick={handleClick2}
                 >
                     <img
                         src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_160,q_50/lsci/db/PICTURES/CMS/313400/313480.logo.png"
@@ -34,7 +50,7 @@ function Poll() {
                     />
                 </button>
             </div>
-            <p className="mt-2 text-center">
+            <p className="mt-2 text-center text-white">
                 Support your favourite Team for tonight clash
             </p>
         </div>

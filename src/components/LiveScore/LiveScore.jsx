@@ -16,7 +16,7 @@ function LiveScore() {
     const { currentUser } = useAuth();
     const params = useParams();
     const id = params.id;
-    const { data, isSuccess } = useQuery("home-matches", async () => {
+    const { data, isSuccess } = useQuery("live-score", async () => {
         return await axios.get(
             ` https://frozen-brook-98254.herokuapp.com/score?matchId=${id}`
         );
@@ -1410,7 +1410,7 @@ function LiveScore() {
         );
     } else {
         return (
-            <div className="text-white h-screen flex justify-center items-center">
+            <div className="text-white h-[80vh] text-2xl font-semibold flex justify-center items-center">
                 Loading...
             </div>
         );
