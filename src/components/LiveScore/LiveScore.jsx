@@ -99,885 +99,922 @@ function LiveScore() {
 
                 <LiveComm />
 
-                <div className="ds-p-3 bg-widget-bg p-3 rounded-xl">
-                    <div className="ds-border-line ds-pb-3">
-                        <div className="ds-flex">
-                            <div className="ds-border ds-border-ui-stroke ds-font-bold ds-text-ui-typo ds-bg-fill ds-rounded-full ds-overflow-hidden ds-w-10 ds-h-10 ds-text-title-xs">
-                                <img
-                                    width="40"
-                                    height="40"
-                                    alt={
-                                        data.data.bestPerformance.batsmen[0]
-                                            .player.image.longCaption
-                                    }
-                                    className="ds-block"
-                                    src={`https://img1.hscicdn.com/image/upload/f_auto,t_h_100/lsci${data.data.bestPerformance.batsmen[0].player.image.url}`}
-                                />
-                            </div>
-                            <div className="ds-ml-2">
-                                <span className="ds-text-tight-m ds-font-bold">
-                                    {
-                                        data.data.bestPerformance.batsmen[0]
-                                            .player.battingName
-                                    }{" "}
-                                </span>
-                                <span className="ds-text-tight-s ds-font-regular ds-text-typo-paragraph-light">
-                                    {
-                                        data.data.bestPerformance.batsmen[0]
-                                            .teamAbbreviation
-                                    }
-                                </span>
-                                <div className="ds-flex ds-items-center">
-                                    <div className="ds-flex">
-                                        <span className="text-yellow-500 ds-text-tight-s ds-font-bold ">
+                {data.data.match.state !== "LIVE" && (
+                    <>
+                        <div className="ds-p-3 bg-widget-bg p-3 rounded-xl">
+                            <div className="ds-border-line ds-pb-3">
+                                <div className="ds-flex">
+                                    <div className="ds-border ds-border-ui-stroke ds-font-bold ds-text-ui-typo ds-bg-fill ds-rounded-full ds-overflow-hidden ds-w-10 ds-h-10 ds-text-title-xs">
+                                        <img
+                                            width="40"
+                                            height="40"
+                                            alt={
+                                                data.data.bestPerformance
+                                                    .batsmen[0].player.image
+                                                    .longCaption
+                                            }
+                                            className="ds-block"
+                                            src={`https://img1.hscicdn.com/image/upload/f_auto,t_h_100/lsci${data.data.bestPerformance.batsmen[0].player.image.url}`}
+                                        />
+                                    </div>
+                                    <div className="ds-ml-2">
+                                        <span className="ds-text-tight-m ds-font-bold">
                                             {
                                                 data.data.bestPerformance
-                                                    .batsmen[0].runs
+                                                    .batsmen[0].player
+                                                    .battingName
                                             }{" "}
-                                            runs&nbsp;
                                         </span>
                                         <span className="ds-text-tight-s ds-font-regular ds-text-typo-paragraph-light">
-                                            (
                                             {
                                                 data.data.bestPerformance
-                                                    .batsmen[0].balls
+                                                    .batsmen[0].teamAbbreviation
                                             }
-                                            )
                                         </span>
+                                        <div className="ds-flex ds-items-center">
+                                            <div className="ds-flex">
+                                                <span className="text-yellow-500 ds-text-tight-s ds-font-bold ">
+                                                    {
+                                                        data.data
+                                                            .bestPerformance
+                                                            .batsmen[0].runs
+                                                    }{" "}
+                                                    runs&nbsp;
+                                                </span>
+                                                <span className="ds-text-tight-s ds-font-regular ds-text-typo-paragraph-light">
+                                                    (
+                                                    {
+                                                        data.data
+                                                            .bestPerformance
+                                                            .batsmen[0].balls
+                                                    }
+                                                    )
+                                                </span>
+                                            </div>
+                                            <div className="ds-flex ds-items-center">
+                                                <span className="ds-ml-2 ds-mr-1 ds-inline-flex ds-rounded-full ds-bg-fill-success ds-w-1.5 ds-h-1.5"></span>
+                                                <span className="ds-text-tight-s ds-font-regular">
+                                                    {
+                                                        data.data
+                                                            .bestPerformance
+                                                            .batsmen[0].fours
+                                                    }{" "}
+                                                    fours
+                                                </span>
+                                                <span className="ds-ml-2 ds-mr-1 ds-inline-flex ds-rounded-full ds-bg-fill-primary ds-w-1.5 ds-h-1.5"></span>
+                                                <span className="ds-text-tight-s ds-font-regular">
+                                                    {
+                                                        data.data
+                                                            .bestPerformance
+                                                            .batsmen[0].sixes
+                                                    }{" "}
+                                                    sixes
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="ds-flex ds-items-center">
-                                        <span className="ds-ml-2 ds-mr-1 ds-inline-flex ds-rounded-full ds-bg-fill-success ds-w-1.5 ds-h-1.5"></span>
-                                        <span className="ds-text-tight-s ds-font-regular">
-                                            {
-                                                data.data.bestPerformance
-                                                    .batsmen[0].fours
-                                            }{" "}
-                                            fours
-                                        </span>
-                                        <span className="ds-ml-2 ds-mr-1 ds-inline-flex ds-rounded-full ds-bg-fill-primary ds-w-1.5 ds-h-1.5"></span>
-                                        <span className="ds-text-tight-s ds-font-regular">
-                                            {
-                                                data.data.bestPerformance
-                                                    .batsmen[0].sixes
-                                            }{" "}
-                                            sixes
-                                        </span>
+                                </div>
+                                <div className="ds-flex ds-items-center ds-justify-between">
+                                    <div className="ds-w-1/2">
+                                        <div>
+                                            <div className="ds-text-tight-xs ds-font-bold ds-uppercase ds-text-ui-typo-light">
+                                                Control
+                                            </div>
+                                            <div className="ds-text-tight-s ds-font-bold ds-mb-1">
+                                                {
+                                                    data.data.bestPerformance
+                                                        .batsmen[0].control
+                                                }
+                                                %
+                                            </div>
+                                            <div className="ds-relative ds-w-full ds-h-2 ds-bg-fill-content-alternate ds-rounded-full ds-overflow-hidden">
+                                                <span className="ds-absolute ds-rounded-full ds-bg-fill-primary ds-inline-block ds-h-full"></span>
+                                            </div>
+                                        </div>
+                                        <div className="ds-mt-4">
+                                            <div className="ds-text-tight-xs ds-font-bold ds-uppercase ds-text-ui-typo-light">
+                                                Productive shot
+                                            </div>
+                                            <div className="ds-text-tight-s ds-font-bold ds-capitalize">
+                                                {
+                                                    data.data.bestPerformance
+                                                        .batsmen[0].shot
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="ds-w-1/2 ds-max-w-[140px]">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 133.02 133.02"
+                                            id="cricket-pie-chart"
+                                            className="ds-overflow-hidden ds-max-w-full"
+                                        >
+                                            <g>
+                                                <circle
+                                                    stroke="white"
+                                                    fill="white"
+                                                    className="ds-fill-ui-stroke"
+                                                    cx="66.51"
+                                                    cy="66.51"
+                                                    r="64.52"
+                                                ></circle>
+                                                <path
+                                                    className="ds-fill-fill-content-prime"
+                                                    d="M20.56,111.87,65.49,67.1H2A63.09,63.09,0,0,0,20.56,111.87Z"
+                                                ></path>
+                                                <path
+                                                    className="ds-fill-ui-stroke"
+                                                    d="M65.28,130.38h0Z"
+                                                ></path>
+                                                <path
+                                                    className="ds-fill-fill-primary"
+                                                    d="M65.95,131l.11-63.44-44.9,44.9A63.09,63.09,0,0,0,65.95,131Z"
+                                                ></path>
+                                                <path
+                                                    className="ds-fill-ui-stroke"
+                                                    d="M110.65,112.49l.15-.16-.3.3Z"
+                                                ></path>
+                                                <path
+                                                    className="ds-fill-fill-content-prime"
+                                                    d="M112.43,111.87,67.49,67.1H131A63.09,63.09,0,0,1,112.43,111.87Z"
+                                                ></path>
+                                                <path
+                                                    className="ds-fill-fill-content-prime"
+                                                    d="M67,131l-.11-63.44,44.9,44.9A63.09,63.09,0,0,1,67,131Z"
+                                                ></path>
+                                                <path
+                                                    className="ds-fill-ui-stroke"
+                                                    d="M22.33,112.49l-.15-.16.3.3Z"
+                                                ></path>
+                                                <path
+                                                    className="ds-fill-fill-content-prime"
+                                                    d="M20.56,21.44,65.49,66.22H2A63.09,63.09,0,0,1,20.56,21.44Z"
+                                                ></path>
+                                                <path
+                                                    className="ds-fill-ui-stroke"
+                                                    d="M65.28,2.94h0Z"
+                                                ></path>
+                                                <path
+                                                    className="ds-fill-fill-content-prime"
+                                                    d="M65.95,2.29l.11,63.44-44.9-44.9A63.09,63.09,0,0,1,65.95,2.29Z"
+                                                ></path>
+                                                <path
+                                                    className="ds-fill-ui-stroke"
+                                                    d="M110.65,20.83l.15.16-.3-.3Z"
+                                                ></path>
+                                                <path
+                                                    className="ds-fill-fill-content-prime"
+                                                    d="M112.43,21.44,67.49,66.22H131A63.09,63.09,0,0,0,112.43,21.44Z"
+                                                ></path>
+                                                <path
+                                                    className="ds-fill-ui-stroke"
+                                                    d="M67.71,2.94h0Z"
+                                                ></path>
+                                                <path
+                                                    className="ds-fill-fill-content-prime"
+                                                    d="M67,2.29l-.11,63.44,44.9-44.9A63.09,63.09,0,0,0,67,2.29Z"
+                                                ></path>
+                                                <path
+                                                    className="ds-fill-ui-stroke"
+                                                    d="M22.33,20.83l-.15.16.3-.3Z"
+                                                ></path>
+                                                <text
+                                                    className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
+                                                    transform="translate(45.32 29.22)"
+                                                >
+                                                    {
+                                                        data.data
+                                                            .bestPerformance
+                                                            .batsmen[0]
+                                                            .wagonData[0]
+                                                    }
+                                                </text>
+                                                <text
+                                                    className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
+                                                    transform="translate(80.32 29.22)"
+                                                >
+                                                    {
+                                                        data.data
+                                                            .bestPerformance
+                                                            .batsmen[0]
+                                                            .wagonData[1]
+                                                    }
+                                                </text>
+                                                <text
+                                                    className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
+                                                    transform="translate(105.65 55.84)"
+                                                >
+                                                    {
+                                                        data.data
+                                                            .bestPerformance
+                                                            .batsmen[0]
+                                                            .wagonData[2]
+                                                    }
+                                                </text>
+                                                <text
+                                                    className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
+                                                    transform="translate(17.44 55.84)"
+                                                >
+                                                    {
+                                                        data.data
+                                                            .bestPerformance
+                                                            .batsmen[0]
+                                                            .wagonData[3]
+                                                    }
+                                                </text>
+                                                <text
+                                                    className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
+                                                    transform="translate(19.44 89.59)"
+                                                >
+                                                    {
+                                                        data.data
+                                                            .bestPerformance
+                                                            .batsmen[0]
+                                                            .wagonData[4]
+                                                    }
+                                                </text>
+                                                <text
+                                                    className="ds-font-bold ds-text-tight-xs ds-fill-raw-white"
+                                                    transform="translate(44.32 115.93)"
+                                                >
+                                                    {
+                                                        data.data
+                                                            .bestPerformance
+                                                            .batsmen[0]
+                                                            .wagonData[5]
+                                                    }
+                                                </text>
+                                                <text
+                                                    className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
+                                                    transform="translate(80.32 116.16)"
+                                                >
+                                                    {
+                                                        data.data
+                                                            .bestPerformance
+                                                            .batsmen[0]
+                                                            .wagonData[6]
+                                                    }
+                                                </text>
+                                                <text
+                                                    className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
+                                                    transform="translate(105.65 88.16)"
+                                                    fill="#ffffff"
+                                                >
+                                                    {
+                                                        data.data
+                                                            .bestPerformance
+                                                            .batsmen[0]
+                                                            .wagonData[7]
+                                                    }
+                                                </text>
+                                                <circle
+                                                    stroke="white"
+                                                    fill="white"
+                                                    className="ds-fill-[transparent] ds-stroke-ui-stroke ds-stroke-1"
+                                                    cx="66.51"
+                                                    cy="66.51"
+                                                    r="64.52"
+                                                ></circle>
+                                            </g>
+                                        </svg>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="ds-flex ds-items-center ds-justify-between">
-                            <div className="ds-w-1/2">
-                                <div>
-                                    <div className="ds-text-tight-xs ds-font-bold ds-uppercase ds-text-ui-typo-light">
-                                        Control
-                                    </div>
-                                    <div className="ds-text-tight-s ds-font-bold ds-mb-1">
-                                        {
-                                            data.data.bestPerformance.batsmen[0]
-                                                .control
+                        <div className="ds-p-3 bg-widget-bg p-3 rounded-xl">
+                            <div className="flex">
+                                <div className="ds-border ds-border-ui-stroke ds-font-bold ds-text-ui-typo ds-bg-fill ds-rounded-full ds-overflow-hidden ds-w-10 ds-h-10 ds-text-title-m">
+                                    <img
+                                        width="40"
+                                        height="40"
+                                        alt={
+                                            data.data.bestPerformance.batsmen[1]
+                                                .player.image.longCaption
                                         }
-                                        %
-                                    </div>
-                                    <div className="ds-relative ds-w-full ds-h-2 ds-bg-fill-content-alternate ds-rounded-full ds-overflow-hidden">
-                                        <span className="ds-absolute ds-rounded-full ds-bg-fill-primary ds-inline-block ds-h-full"></span>
-                                    </div>
+                                        className="ds-block"
+                                        src={`https://img1.hscicdn.com/image/upload/f_auto,t_h_100/lsci${data.data.bestPerformance.batsmen[1].player.image.url}`}
+                                    />
                                 </div>
-                                <div className="ds-mt-4">
-                                    <div className="ds-text-tight-xs ds-font-bold ds-uppercase ds-text-ui-typo-light">
-                                        Productive shot
-                                    </div>
-                                    <div className="ds-text-tight-s ds-font-bold ds-capitalize">
-                                        {
-                                            data.data.bestPerformance.batsmen[0]
-                                                .shot
-                                        }
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="ds-w-1/2 ds-max-w-[140px]">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 133.02 133.02"
-                                    id="cricket-pie-chart"
-                                    className="ds-overflow-hidden ds-max-w-full"
-                                >
-                                    <g>
-                                        <circle
-                                            stroke="white"
-                                            fill="white"
-                                            className="ds-fill-ui-stroke"
-                                            cx="66.51"
-                                            cy="66.51"
-                                            r="64.52"
-                                        ></circle>
-                                        <path
-                                            className="ds-fill-fill-content-prime"
-                                            d="M20.56,111.87,65.49,67.1H2A63.09,63.09,0,0,0,20.56,111.87Z"
-                                        ></path>
-                                        <path
-                                            className="ds-fill-ui-stroke"
-                                            d="M65.28,130.38h0Z"
-                                        ></path>
-                                        <path
-                                            className="ds-fill-fill-primary"
-                                            d="M65.95,131l.11-63.44-44.9,44.9A63.09,63.09,0,0,0,65.95,131Z"
-                                        ></path>
-                                        <path
-                                            className="ds-fill-ui-stroke"
-                                            d="M110.65,112.49l.15-.16-.3.3Z"
-                                        ></path>
-                                        <path
-                                            className="ds-fill-fill-content-prime"
-                                            d="M112.43,111.87,67.49,67.1H131A63.09,63.09,0,0,1,112.43,111.87Z"
-                                        ></path>
-                                        <path
-                                            className="ds-fill-fill-content-prime"
-                                            d="M67,131l-.11-63.44,44.9,44.9A63.09,63.09,0,0,1,67,131Z"
-                                        ></path>
-                                        <path
-                                            className="ds-fill-ui-stroke"
-                                            d="M22.33,112.49l-.15-.16.3.3Z"
-                                        ></path>
-                                        <path
-                                            className="ds-fill-fill-content-prime"
-                                            d="M20.56,21.44,65.49,66.22H2A63.09,63.09,0,0,1,20.56,21.44Z"
-                                        ></path>
-                                        <path
-                                            className="ds-fill-ui-stroke"
-                                            d="M65.28,2.94h0Z"
-                                        ></path>
-                                        <path
-                                            className="ds-fill-fill-content-prime"
-                                            d="M65.95,2.29l.11,63.44-44.9-44.9A63.09,63.09,0,0,1,65.95,2.29Z"
-                                        ></path>
-                                        <path
-                                            className="ds-fill-ui-stroke"
-                                            d="M110.65,20.83l.15.16-.3-.3Z"
-                                        ></path>
-                                        <path
-                                            className="ds-fill-fill-content-prime"
-                                            d="M112.43,21.44,67.49,66.22H131A63.09,63.09,0,0,0,112.43,21.44Z"
-                                        ></path>
-                                        <path
-                                            className="ds-fill-ui-stroke"
-                                            d="M67.71,2.94h0Z"
-                                        ></path>
-                                        <path
-                                            className="ds-fill-fill-content-prime"
-                                            d="M67,2.29l-.11,63.44,44.9-44.9A63.09,63.09,0,0,0,67,2.29Z"
-                                        ></path>
-                                        <path
-                                            className="ds-fill-ui-stroke"
-                                            d="M22.33,20.83l-.15.16.3-.3Z"
-                                        ></path>
-                                        <text
-                                            className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
-                                            transform="translate(45.32 29.22)"
-                                        >
-                                            {
-                                                data.data.bestPerformance
-                                                    .batsmen[0].wagonData[0]
-                                            }
-                                        </text>
-                                        <text
-                                            className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
-                                            transform="translate(80.32 29.22)"
-                                        >
-                                            {
-                                                data.data.bestPerformance
-                                                    .batsmen[0].wagonData[1]
-                                            }
-                                        </text>
-                                        <text
-                                            className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
-                                            transform="translate(105.65 55.84)"
-                                        >
-                                            {
-                                                data.data.bestPerformance
-                                                    .batsmen[0].wagonData[2]
-                                            }
-                                        </text>
-                                        <text
-                                            className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
-                                            transform="translate(17.44 55.84)"
-                                        >
-                                            {
-                                                data.data.bestPerformance
-                                                    .batsmen[0].wagonData[3]
-                                            }
-                                        </text>
-                                        <text
-                                            className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
-                                            transform="translate(19.44 89.59)"
-                                        >
-                                            {
-                                                data.data.bestPerformance
-                                                    .batsmen[0].wagonData[4]
-                                            }
-                                        </text>
-                                        <text
-                                            className="ds-font-bold ds-text-tight-xs ds-fill-raw-white"
-                                            transform="translate(44.32 115.93)"
-                                        >
-                                            {
-                                                data.data.bestPerformance
-                                                    .batsmen[0].wagonData[5]
-                                            }
-                                        </text>
-                                        <text
-                                            className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
-                                            transform="translate(80.32 116.16)"
-                                        >
-                                            {
-                                                data.data.bestPerformance
-                                                    .batsmen[0].wagonData[6]
-                                            }
-                                        </text>
-                                        <text
-                                            className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
-                                            transform="translate(105.65 88.16)"
-                                            fill="#ffffff"
-                                        >
-                                            {
-                                                data.data.bestPerformance
-                                                    .batsmen[0].wagonData[7]
-                                            }
-                                        </text>
-                                        <circle
-                                            stroke="white"
-                                            fill="white"
-                                            className="ds-fill-[transparent] ds-stroke-ui-stroke ds-stroke-1"
-                                            cx="66.51"
-                                            cy="66.51"
-                                            r="64.52"
-                                        ></circle>
-                                    </g>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="ds-p-3 bg-widget-bg p-3 rounded-xl">
-                    <div className="flex">
-                        <div className="ds-border ds-border-ui-stroke ds-font-bold ds-text-ui-typo ds-bg-fill ds-rounded-full ds-overflow-hidden ds-w-10 ds-h-10 ds-text-title-m">
-                            <img
-                                width="40"
-                                height="40"
-                                alt={
-                                    data.data.bestPerformance.batsmen[1].player
-                                        .image.longCaption
-                                }
-                                className="ds-block"
-                                src={`https://img1.hscicdn.com/image/upload/f_auto,t_h_100/lsci${data.data.bestPerformance.batsmen[1].player.image.url}`}
-                            />
-                        </div>
-                        <div className="ds-ml-2 ">
-                            <span className=" ds-font-bold text-sm">
-                                {
-                                    data.data.bestPerformance.batsmen[1].player
-                                        .battingName
-                                }{" "}
-                            </span>
-                            <span className="ds-text-tight-s ds-font-regular ds-text-typo-paragraph-light">
-                                {
-                                    data.data.bestPerformance.batsmen[1]
-                                        .teamAbbreviation
-                                }
-                            </span>
-                            <div className="ds-flex ds-items-center ds-justify-between">
-                                <div className="ds-flex">
-                                    <span className="text-xs ds-font-bold  text-yellow-500">
+                                <div className="ds-ml-2 ">
+                                    <span className=" ds-font-bold text-sm">
                                         {
                                             data.data.bestPerformance.batsmen[1]
-                                                .runs
+                                                .player.battingName
                                         }{" "}
-                                        runs&nbsp;
                                     </span>
-                                    <span className="text-xs ds-font-regular ds-text-typo-paragraph-light">
-                                        (
-                                        {
-                                            data.data.bestPerformance.batsmen[1]
-                                                .balls
-                                        }
-                                        )
-                                    </span>
-                                </div>
-                                <div className="ds-flex ds-items-center">
-                                    <span className="ds-ml-2 ds-mr-1 ds-inline-flex ds-rounded-full ds-bg-fill-success ds-w-2.5 ds-h-2.5"></span>
-                                    <span className="ds-text-tight-s ds-font-regular">
-                                        {
-                                            data.data.bestPerformance.batsmen[1]
-                                                .fours
-                                        }{" "}
-                                        fours
-                                    </span>
-                                    <span className="ds-ml-2 ds-mr-1 ds-inline-flex ds-rounded-full ds-bg-fill-primary ds-w-2.5 ds-h-2.5"></span>
-                                    <span className="ds-text-tight-s ds-font-regular">
-                                        {
-                                            data.data.bestPerformance.batsmen[1]
-                                                .sixes
-                                        }{" "}
-                                        sixes
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="ds-flex ds-items-center ds-justify-between">
-                        <div className="ds-w-1/2">
-                            <div>
-                                <div className="ds-text-tight-xs ds-font-bold ds-uppercase ds-text-ui-typo-light">
-                                    Control
-                                </div>
-                                <div className="ds-text-tight-m ds-font-bold ds-mb-1">
-                                    {
-                                        data.data.bestPerformance.batsmen[1]
-                                            .control
-                                    }
-                                    %
-                                </div>
-                                <div className="ds-relative ds-w-full ds-h-2 ds-bg-fill-content-alternate ds-rounded-full ds-overflow-hidden">
-                                    <span className="ds-absolute ds-rounded-full ds-bg-fill-primary ds-inline-block ds-h-full"></span>
-                                </div>
-                            </div>
-                            <div className="ds-mt-4">
-                                <div className="ds-text-tight-xs ds-font-bold ds-uppercase ds-text-ui-typo-light">
-                                    Productive shot
-                                </div>
-                                <div className="ds-text-tight-m ds-font-bold ds-capitalize">
-                                    {data.data.bestPerformance.batsmen[1].shot}
-                                </div>
-                            </div>
-                        </div>
-                        <div className="ds-w-1/2 ds-max-w-[140px] ">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 133.02 133.02"
-                                id="cricket-pie-chart"
-                                className="ds-overflow-hidden ds-max-w-full"
-                            >
-                                <g>
-                                    <circle
-                                        stroke="white"
-                                        fill="white"
-                                        className="ds-fill-ui-stroke"
-                                        cx="66.51"
-                                        cy="66.51"
-                                        r="64.52"
-                                    ></circle>
-                                    <path
-                                        className="ds-fill-fill-content-prime"
-                                        d="M20.56,111.87,65.49,67.1H2A63.09,63.09,0,0,0,20.56,111.87Z"
-                                    ></path>
-                                    <path
-                                        className="ds-fill-ui-stroke"
-                                        d="M65.28,130.38h0Z"
-                                    ></path>
-                                    <path
-                                        className="ds-fill-fill-primary"
-                                        d="M65.95,131l.11-63.44-44.9,44.9A63.09,63.09,0,0,0,65.95,131Z"
-                                    ></path>
-                                    <path
-                                        className="ds-fill-ui-stroke"
-                                        d="M110.65,112.49l.15-.16-.3.3Z"
-                                    ></path>
-                                    <path
-                                        className="ds-fill-fill-primary"
-                                        d="M112.43,111.87,67.49,67.1H131A63.09,63.09,0,0,1,112.43,111.87Z"
-                                    ></path>
-                                    <path
-                                        className="ds-fill-fill-content-prime"
-                                        d="M67,131l-.11-63.44,44.9,44.9A63.09,63.09,0,0,1,67,131Z"
-                                    ></path>
-                                    <path
-                                        className="ds-fill-ui-stroke"
-                                        d="M22.33,112.49l-.15-.16.3.3Z"
-                                    ></path>
-                                    <path
-                                        className="ds-fill-fill-content-prime"
-                                        d="M20.56,21.44,65.49,66.22H2A63.09,63.09,0,0,1,20.56,21.44Z"
-                                    ></path>
-                                    <path
-                                        className="ds-fill-ui-stroke"
-                                        d="M65.28,2.94h0Z"
-                                    ></path>
-                                    <path
-                                        className="ds-fill-fill-content-prime"
-                                        d="M65.95,2.29l.11,63.44-44.9-44.9A63.09,63.09,0,0,1,65.95,2.29Z"
-                                    ></path>
-                                    <path
-                                        className="ds-fill-ui-stroke"
-                                        d="M110.65,20.83l.15.16-.3-.3Z"
-                                    ></path>
-                                    <path
-                                        className="ds-fill-fill-content-prime"
-                                        d="M112.43,21.44,67.49,66.22H131A63.09,63.09,0,0,0,112.43,21.44Z"
-                                    ></path>
-                                    <path
-                                        className="ds-fill-ui-stroke"
-                                        d="M67.71,2.94h0Z"
-                                    ></path>
-                                    <path
-                                        className="ds-fill-fill-content-prime"
-                                        d="M67,2.29l-.11,63.44,44.9-44.9A63.09,63.09,0,0,0,67,2.29Z"
-                                    ></path>
-                                    <path
-                                        className="ds-fill-ui-stroke"
-                                        d="M22.33,20.83l-.15.16.3-.3Z"
-                                    ></path>
-                                    <text
-                                        className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
-                                        transform="translate(45.32 29.22)"
-                                    >
-                                        {
-                                            data.data.bestPerformance.batsmen[1]
-                                                .wagonData[0]
-                                        }
-                                    </text>
-                                    <text
-                                        className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
-                                        transform="translate(80.32 29.22)"
-                                    >
-                                        {
-                                            data.data.bestPerformance.batsmen[1]
-                                                .wagonData[1]
-                                        }
-                                    </text>
-                                    <text
-                                        className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
-                                        transform="translate(105.65 55.84)"
-                                    >
-                                        {
-                                            data.data.bestPerformance.batsmen[1]
-                                                .wagonData[2]
-                                        }
-                                    </text>
-                                    <text
-                                        className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
-                                        transform="translate(17.44 55.84)"
-                                    >
-                                        {
-                                            data.data.bestPerformance.batsmen[1]
-                                                .wagonData[3]
-                                        }
-                                    </text>
-                                    <text
-                                        className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
-                                        transform="translate(19.44 89.59)"
-                                    >
-                                        {
-                                            data.data.bestPerformance.batsmen[1]
-                                                .wagonData[4]
-                                        }
-                                    </text>
-                                    <text
-                                        className="ds-font-bold ds-text-tight-xs ds-fill-raw-white"
-                                        transform="translate(44.32 115.93)"
-                                    >
-                                        {
-                                            data.data.bestPerformance.batsmen[1]
-                                                .wagonData[5]
-                                        }
-                                    </text>
-                                    <text
-                                        className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
-                                        transform="translate(80.32 116.16)"
-                                    >
-                                        {
-                                            data.data.bestPerformance.batsmen[1]
-                                                .wagonData[6]
-                                        }
-                                    </text>
-                                    <text
-                                        className="ds-font-bold ds-text-tight-xs ds-fill-raw-white"
-                                        transform="translate(105.65 88.16)"
-                                        fill="#ffffff"
-                                    >
-                                        {
-                                            data.data.bestPerformance.batsmen[1]
-                                                .wagonData[7]
-                                        }
-                                    </text>
-                                    <circle
-                                        stroke="white"
-                                        fill="white"
-                                        className="ds-fill-[transparent] ds-stroke-ui-stroke ds-stroke-1"
-                                        cx="66.51"
-                                        cy="66.51"
-                                        r="64.52"
-                                    ></circle>
-                                </g>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                <div className=" row-span-2 bg-widget-bg p-3 rounded-xl">
-                    <div className="p-8">
-                        <div className="ds-flex">
-                            <div className="ds-border ds-border-ui-stroke ds-font-bold ds-text-ui-typo ds-bg-fill ds-rounded-full ds-overflow-hidden ds-w-16 ds-h-16 ds-text-title-m">
-                                <img
-                                    width="64"
-                                    height="64"
-                                    alt={
-                                        data.data.bestPerformance.bowlers[0]
-                                            .player.image.longCaption
-                                    }
-                                    className="ds-block"
-                                    src={`https://img1.hscicdn.com/image/upload/f_auto,t_h_100_2x/lsci${data.data.bestPerformance.bowlers[0].player.image.url}`}
-                                />
-                            </div>
-                            <div className="ds-text-tight-s ds-font-bold ds-ml-2">
-                                <div className="ds-text-tight-l ds-font-bold">
-                                    {
-                                        data.data.bestPerformance.bowlers[0]
-                                            .player.longName
-                                    }
                                     <span className="ds-text-tight-s ds-font-regular ds-text-typo-paragraph-light">
                                         {
-                                            data.data.bestPerformance.bowlers[0]
-                                                .player.teamAbbreviation
+                                            data.data.bestPerformance.batsmen[1]
+                                                .teamAbbreviation
                                         }
                                     </span>
+                                    <div className="ds-flex ds-items-center ds-justify-between">
+                                        <div className="ds-flex">
+                                            <span className="text-xs ds-font-bold  text-yellow-500">
+                                                {
+                                                    data.data.bestPerformance
+                                                        .batsmen[1].runs
+                                                }{" "}
+                                                runs&nbsp;
+                                            </span>
+                                            <span className="text-xs ds-font-regular ds-text-typo-paragraph-light">
+                                                (
+                                                {
+                                                    data.data.bestPerformance
+                                                        .batsmen[1].balls
+                                                }
+                                                )
+                                            </span>
+                                        </div>
+                                        <div className="ds-flex ds-items-center">
+                                            <span className="ds-ml-2 ds-mr-1 ds-inline-flex ds-rounded-full ds-bg-fill-success ds-w-2.5 ds-h-2.5"></span>
+                                            <span className="ds-text-tight-s ds-font-regular">
+                                                {
+                                                    data.data.bestPerformance
+                                                        .batsmen[1].fours
+                                                }{" "}
+                                                fours
+                                            </span>
+                                            <span className="ds-ml-2 ds-mr-1 ds-inline-flex ds-rounded-full ds-bg-fill-primary ds-w-2.5 ds-h-2.5"></span>
+                                            <span className="ds-text-tight-s ds-font-regular">
+                                                {
+                                                    data.data.bestPerformance
+                                                        .batsmen[1].sixes
+                                                }{" "}
+                                                sixes
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="ds-flex ds-mt-2">
-                                    <div className="ds-mr-4">
-                                        <div className="ds-text-tight-xs ds-font-bold">
-                                            O
+                            </div>
+                            <div className="ds-flex ds-items-center ds-justify-between">
+                                <div className="ds-w-1/2">
+                                    <div>
+                                        <div className="ds-text-tight-xs ds-font-bold ds-uppercase ds-text-ui-typo-light">
+                                            Control
                                         </div>
-                                        <div>
-                                            {console.log(
-                                                data.data.bestPerformance
-                                                    .bowlers[0]
-                                            )}
+                                        <div className="ds-text-tight-m ds-font-bold ds-mb-1">
                                             {
                                                 data.data.bestPerformance
-                                                    .bowlers[0].overs
+                                                    .batsmen[1].control
+                                            }
+                                            %
+                                        </div>
+                                        <div className="ds-relative ds-w-full ds-h-2 ds-bg-fill-content-alternate ds-rounded-full ds-overflow-hidden">
+                                            <span className="ds-absolute ds-rounded-full ds-bg-fill-primary ds-inline-block ds-h-full"></span>
+                                        </div>
+                                    </div>
+                                    <div className="ds-mt-4">
+                                        <div className="ds-text-tight-xs ds-font-bold ds-uppercase ds-text-ui-typo-light">
+                                            Productive shot
+                                        </div>
+                                        <div className="ds-text-tight-m ds-font-bold ds-capitalize">
+                                            {
+                                                data.data.bestPerformance
+                                                    .batsmen[1].shot
                                             }
                                         </div>
                                     </div>
-                                    <div className="ds-mr-4">
-                                        <div className="ds-text-tight-xs ds-font-bold">
-                                            M
-                                        </div>
-                                        <div>
+                                </div>
+                                <div className="ds-w-1/2 ds-max-w-[140px] ">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 133.02 133.02"
+                                        id="cricket-pie-chart"
+                                        className="ds-overflow-hidden ds-max-w-full"
+                                    >
+                                        <g>
+                                            <circle
+                                                stroke="white"
+                                                fill="white"
+                                                className="ds-fill-ui-stroke"
+                                                cx="66.51"
+                                                cy="66.51"
+                                                r="64.52"
+                                            ></circle>
+                                            <path
+                                                className="ds-fill-fill-content-prime"
+                                                d="M20.56,111.87,65.49,67.1H2A63.09,63.09,0,0,0,20.56,111.87Z"
+                                            ></path>
+                                            <path
+                                                className="ds-fill-ui-stroke"
+                                                d="M65.28,130.38h0Z"
+                                            ></path>
+                                            <path
+                                                className="ds-fill-fill-primary"
+                                                d="M65.95,131l.11-63.44-44.9,44.9A63.09,63.09,0,0,0,65.95,131Z"
+                                            ></path>
+                                            <path
+                                                className="ds-fill-ui-stroke"
+                                                d="M110.65,112.49l.15-.16-.3.3Z"
+                                            ></path>
+                                            <path
+                                                className="ds-fill-fill-primary"
+                                                d="M112.43,111.87,67.49,67.1H131A63.09,63.09,0,0,1,112.43,111.87Z"
+                                            ></path>
+                                            <path
+                                                className="ds-fill-fill-content-prime"
+                                                d="M67,131l-.11-63.44,44.9,44.9A63.09,63.09,0,0,1,67,131Z"
+                                            ></path>
+                                            <path
+                                                className="ds-fill-ui-stroke"
+                                                d="M22.33,112.49l-.15-.16.3.3Z"
+                                            ></path>
+                                            <path
+                                                className="ds-fill-fill-content-prime"
+                                                d="M20.56,21.44,65.49,66.22H2A63.09,63.09,0,0,1,20.56,21.44Z"
+                                            ></path>
+                                            <path
+                                                className="ds-fill-ui-stroke"
+                                                d="M65.28,2.94h0Z"
+                                            ></path>
+                                            <path
+                                                className="ds-fill-fill-content-prime"
+                                                d="M65.95,2.29l.11,63.44-44.9-44.9A63.09,63.09,0,0,1,65.95,2.29Z"
+                                            ></path>
+                                            <path
+                                                className="ds-fill-ui-stroke"
+                                                d="M110.65,20.83l.15.16-.3-.3Z"
+                                            ></path>
+                                            <path
+                                                className="ds-fill-fill-content-prime"
+                                                d="M112.43,21.44,67.49,66.22H131A63.09,63.09,0,0,0,112.43,21.44Z"
+                                            ></path>
+                                            <path
+                                                className="ds-fill-ui-stroke"
+                                                d="M67.71,2.94h0Z"
+                                            ></path>
+                                            <path
+                                                className="ds-fill-fill-content-prime"
+                                                d="M67,2.29l-.11,63.44,44.9-44.9A63.09,63.09,0,0,0,67,2.29Z"
+                                            ></path>
+                                            <path
+                                                className="ds-fill-ui-stroke"
+                                                d="M22.33,20.83l-.15.16.3-.3Z"
+                                            ></path>
+                                            <text
+                                                className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
+                                                transform="translate(45.32 29.22)"
+                                            >
+                                                {
+                                                    data.data.bestPerformance
+                                                        .batsmen[1].wagonData[0]
+                                                }
+                                            </text>
+                                            <text
+                                                className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
+                                                transform="translate(80.32 29.22)"
+                                            >
+                                                {
+                                                    data.data.bestPerformance
+                                                        .batsmen[1].wagonData[1]
+                                                }
+                                            </text>
+                                            <text
+                                                className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
+                                                transform="translate(105.65 55.84)"
+                                            >
+                                                {
+                                                    data.data.bestPerformance
+                                                        .batsmen[1].wagonData[2]
+                                                }
+                                            </text>
+                                            <text
+                                                className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
+                                                transform="translate(17.44 55.84)"
+                                            >
+                                                {
+                                                    data.data.bestPerformance
+                                                        .batsmen[1].wagonData[3]
+                                                }
+                                            </text>
+                                            <text
+                                                className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
+                                                transform="translate(19.44 89.59)"
+                                            >
+                                                {
+                                                    data.data.bestPerformance
+                                                        .batsmen[1].wagonData[4]
+                                                }
+                                            </text>
+                                            <text
+                                                className="ds-font-bold ds-text-tight-xs ds-fill-raw-white"
+                                                transform="translate(44.32 115.93)"
+                                            >
+                                                {
+                                                    data.data.bestPerformance
+                                                        .batsmen[1].wagonData[5]
+                                                }
+                                            </text>
+                                            <text
+                                                className="ds-font-bold ds-text-tight-xs ds-fill-typo-title"
+                                                transform="translate(80.32 116.16)"
+                                            >
+                                                {
+                                                    data.data.bestPerformance
+                                                        .batsmen[1].wagonData[6]
+                                                }
+                                            </text>
+                                            <text
+                                                className="ds-font-bold ds-text-tight-xs ds-fill-raw-white"
+                                                transform="translate(105.65 88.16)"
+                                                fill="#ffffff"
+                                            >
+                                                {
+                                                    data.data.bestPerformance
+                                                        .batsmen[1].wagonData[7]
+                                                }
+                                            </text>
+                                            <circle
+                                                stroke="white"
+                                                fill="white"
+                                                className="ds-fill-[transparent] ds-stroke-ui-stroke ds-stroke-1"
+                                                cx="66.51"
+                                                cy="66.51"
+                                                r="64.52"
+                                            ></circle>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className=" row-span-2 bg-widget-bg p-3 rounded-xl">
+                            <div className="p-8">
+                                <div className="ds-flex">
+                                    <div className="ds-border ds-border-ui-stroke ds-font-bold ds-text-ui-typo ds-bg-fill ds-rounded-full ds-overflow-hidden ds-w-16 ds-h-16 ds-text-title-m">
+                                        <img
+                                            width="64"
+                                            height="64"
+                                            alt={
+                                                data.data.bestPerformance
+                                                    .bowlers[0].player.image
+                                                    .longCaption
+                                            }
+                                            className="ds-block"
+                                            src={`https://img1.hscicdn.com/image/upload/f_auto,t_h_100_2x/lsci${data.data.bestPerformance.bowlers[0].player.image.url}`}
+                                        />
+                                    </div>
+                                    <div className="ds-text-tight-s ds-font-bold ds-ml-2">
+                                        <div className="ds-text-tight-l ds-font-bold">
                                             {
                                                 data.data.bestPerformance
-                                                    .bowlers[0].maidens
+                                                    .bowlers[0].player.longName
                                             }
+                                            <span className="ds-text-tight-s ds-font-regular ds-text-typo-paragraph-light">
+                                                {
+                                                    data.data.bestPerformance
+                                                        .bowlers[0].player
+                                                        .teamAbbreviation
+                                                }
+                                            </span>
+                                        </div>
+                                        <div className="ds-flex ds-mt-2">
+                                            <div className="ds-mr-4">
+                                                <div className="ds-text-tight-xs ds-font-bold">
+                                                    O
+                                                </div>
+                                                <div>
+                                                    {console.log(
+                                                        data.data
+                                                            .bestPerformance
+                                                            .bowlers[0]
+                                                    )}
+                                                    {
+                                                        data.data
+                                                            .bestPerformance
+                                                            .bowlers[0].overs
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div className="ds-mr-4">
+                                                <div className="ds-text-tight-xs ds-font-bold">
+                                                    M
+                                                </div>
+                                                <div>
+                                                    {
+                                                        data.data
+                                                            .bestPerformance
+                                                            .bowlers[0].maidens
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div className="ds-mr-4">
+                                                <div className="ds-text-tight-xs ds-font-bold">
+                                                    R
+                                                </div>
+                                                <div>
+                                                    {
+                                                        data.data
+                                                            .bestPerformance
+                                                            .bowlers[0].conceded
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div className="ds-mr-4">
+                                                <div className="ds-text-tight-xs ds-font-bold">
+                                                    W
+                                                </div>
+                                                <div>
+                                                    {
+                                                        data.data
+                                                            .bestPerformance
+                                                            .bowlers[0].wickets
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div className="ds-mr-4">
+                                                <div className="ds-text-tight-xs ds-font-bold">
+                                                    ECO
+                                                </div>
+                                                <div>
+                                                    {
+                                                        data.data
+                                                            .bestPerformance
+                                                            .bowlers[0].economy
+                                                    }
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="ds-mr-4">
-                                        <div className="ds-text-tight-xs ds-font-bold">
-                                            R
-                                        </div>
-                                        <div>
-                                            {
-                                                data.data.bestPerformance
-                                                    .bowlers[0].conceded
-                                            }
-                                        </div>
+                                </div>
+                                <div className="ds-flex ds-pt-6">
+                                    <div className="ds-text-tight-s ds-font-regular ds-text-ui-typo-mid ds-pt-12">
+                                        <span className="ds-block ds-p-2 ds-border-line ds-border-b">
+                                            FT
+                                        </span>
+                                        <span className="ds-block ds-p-2 ds-border-line ds-border-b">
+                                            Y
+                                        </span>
+                                        <span className="ds-block ds-p-2 ds-border-line ds-border-b">
+                                            FL
+                                        </span>
+                                        <span className="ds-block ds-p-2 ds-border-line ds-border-b">
+                                            GL
+                                        </span>
+                                        <span className="ds-block ds-p-2 ds-border-line ds-border-b">
+                                            SG
+                                        </span>
+                                        <span className="ds-block ds-p-2 ds-border-line ds-border-b">
+                                            S
+                                        </span>
                                     </div>
-                                    <div className="ds-mr-4">
-                                        <div className="ds-text-tight-xs ds-font-bold">
-                                            W
+                                    <div className="ds-w-[104px]">
+                                        <div className="ds-text-tight-s ds-font-regular">
+                                            <div className="ds-flex ds-justify-between ds-text-ui-typo-mid ds-mb-2">
+                                                <span className="ds-px-1 ds-border-line ds-border-b">
+                                                    OFF
+                                                </span>
+
+                                                <span className="ds-px-1 ds-border-line ds-border-b">
+                                                    LEG
+                                                </span>
+                                            </div>
+                                            <div className="text-black ds-text-tight-xs ds-font-bold ds-w-[106px] ds-py-1.5 ds-bg-fill-content-alternate ds-text-center">
+                                                RHB
+                                            </div>
                                         </div>
-                                        <div>
-                                            {
-                                                data.data.bestPerformance
-                                                    .bowlers[0].wickets
-                                            }
-                                        </div>
+                                        <table className="ds-w-full ds-table ds-table-sm ds-table-bordered ds-border-collapse ds-border ds-border-line ds-table-auto  ds-text-tight-xs">
+                                            <tbody className="">
+                                                <tr className="ds-border-b ds-border-line">
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr className="ds-border-b ds-border-line">
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr className="ds-border-b ds-border-line">
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr className="ds-border-b ds-border-line">
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr className="ds-border-b ds-border-line">
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr className="ds-border-b ds-border-line">
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center">
+                                                            1W
+                                                        </div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
-                                    <div className="ds-mr-4">
-                                        <div className="ds-text-tight-xs ds-font-bold">
-                                            ECO
+                                    <div className="ds-w-[104px] ds-ml-4">
+                                        <div className="ds-text-tight-s ds-font-regular">
+                                            <div className="ds-flex ds-justify-between ds-text-ui-typo-light ds-mb-2">
+                                                <span className="ds-px-1 ds-border-line ds-border-b">
+                                                    LEG
+                                                </span>
+
+                                                <span className="ds-px-1 ds-border-line ds-border-b">
+                                                    OFF
+                                                </span>
+                                            </div>
+                                            <div className="text-black ds-text-tight-xs ds-font-bold ds-w-[106px] ds-py-1.5 ds-bg-fill-content-alternate ds-text-center">
+                                                LHB
+                                            </div>
                                         </div>
-                                        <div>
-                                            {
-                                                data.data.bestPerformance
-                                                    .bowlers[0].economy
-                                            }
-                                        </div>
+                                        <table className="ds-w-full ds-table ds-table-sm ds-table-bordered ds-border-collapse ds-border ds-border-line ds-table-auto  ds-text-tight-xs">
+                                            <tbody className="">
+                                                <tr className="ds-border-b ds-border-line">
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr className="ds-border-b ds-border-line">
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr className="ds-border-b ds-border-line">
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr className="ds-border-b ds-border-line">
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center">
+                                                            1W
+                                                        </div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center">
+                                                            1W
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr className="ds-border-b ds-border-line">
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                </tr>
+                                                <tr className="ds-border-b ds-border-line">
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                    <td className="ds-min-w-max !ds-p-0">
+                                                        <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="ds-flex ds-pt-6">
-                            <div className="ds-text-tight-s ds-font-regular ds-text-ui-typo-mid ds-pt-12">
-                                <span className="ds-block ds-p-2 ds-border-line ds-border-b">
-                                    FT
-                                </span>
-                                <span className="ds-block ds-p-2 ds-border-line ds-border-b">
-                                    Y
-                                </span>
-                                <span className="ds-block ds-p-2 ds-border-line ds-border-b">
-                                    FL
-                                </span>
-                                <span className="ds-block ds-p-2 ds-border-line ds-border-b">
-                                    GL
-                                </span>
-                                <span className="ds-block ds-p-2 ds-border-line ds-border-b">
-                                    SG
-                                </span>
-                                <span className="ds-block ds-p-2 ds-border-line ds-border-b">
-                                    S
-                                </span>
-                            </div>
-                            <div className="ds-w-[104px]">
-                                <div className="ds-text-tight-s ds-font-regular">
-                                    <div className="ds-flex ds-justify-between ds-text-ui-typo-mid ds-mb-2">
-                                        <span className="ds-px-1 ds-border-line ds-border-b">
-                                            OFF
-                                        </span>
-
-                                        <span className="ds-px-1 ds-border-line ds-border-b">
-                                            LEG
-                                        </span>
-                                    </div>
-                                    <div className="text-black ds-text-tight-xs ds-font-bold ds-w-[106px] ds-py-1.5 ds-bg-fill-content-alternate ds-text-center">
-                                        RHB
-                                    </div>
-                                </div>
-                                <table className="ds-w-full ds-table ds-table-sm ds-table-bordered ds-border-collapse ds-border ds-border-line ds-table-auto  ds-text-tight-xs">
-                                    <tbody className="">
-                                        <tr className="ds-border-b ds-border-line">
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                        </tr>
-                                        <tr className="ds-border-b ds-border-line">
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                        </tr>
-                                        <tr className="ds-border-b ds-border-line">
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                        </tr>
-                                        <tr className="ds-border-b ds-border-line">
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                        </tr>
-                                        <tr className="ds-border-b ds-border-line">
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                        </tr>
-                                        <tr className="ds-border-b ds-border-line">
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center">
-                                                    1W
-                                                </div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div className="ds-w-[104px] ds-ml-4">
-                                <div className="ds-text-tight-s ds-font-regular">
-                                    <div className="ds-flex ds-justify-between ds-text-ui-typo-light ds-mb-2">
-                                        <span className="ds-px-1 ds-border-line ds-border-b">
-                                            LEG
-                                        </span>
-
-                                        <span className="ds-px-1 ds-border-line ds-border-b">
-                                            OFF
-                                        </span>
-                                    </div>
-                                    <div className="text-black ds-text-tight-xs ds-font-bold ds-w-[106px] ds-py-1.5 ds-bg-fill-content-alternate ds-text-center">
-                                        LHB
-                                    </div>
-                                </div>
-                                <table className="ds-w-full ds-table ds-table-sm ds-table-bordered ds-border-collapse ds-border ds-border-line ds-table-auto  ds-text-tight-xs">
-                                    <tbody className="">
-                                        <tr className="ds-border-b ds-border-line">
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                        </tr>
-                                        <tr className="ds-border-b ds-border-line">
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                        </tr>
-                                        <tr className="ds-border-b ds-border-line">
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                        </tr>
-                                        <tr className="ds-border-b ds-border-line">
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center">
-                                                    1W
-                                                </div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center">
-                                                    1W
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr className="ds-border-b ds-border-line">
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                        </tr>
-                                        <tr className="ds-border-b ds-border-line">
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                            <td className="ds-min-w-max !ds-p-0">
-                                                <div className="ds-w-[20px] ds-h-[32px] ds-flex ds-items-center ds-justify-center"></div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    </>
+                )}
 
                 <div className=" col-span-2 row-span-2 bg-widget-bg p-3 rounded-xl">
                     <div className="ds-w-full ds-bg-fill-content-prime ds-overflow-hidden ds-rounded-xl ds-border ds-border-line ds-mb-4">
