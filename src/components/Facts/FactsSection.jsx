@@ -12,18 +12,18 @@ function FactsSection() {
 
             <div className="bg-widget-bg p-4 rounded-xl">
                 <img
-                    src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_640,q_50/lsci/db/PICTURES/CMS/264600/264647.4.jpg"
+                    src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_640,q_50/lsci/db/PICTURES/CMS/288200/288260.6.jpg"
                     alt="On This Day: Deandra Dottin hits the first women's T20I ton"
                     className="rounded-lg"
                 />
                 <p className="px-4 text-white pt-2">
-                    On This Day: Deandra Dottin hits the first women's T20I ton
+                    On This Day: Happy birthday, Jeetan Patel
                 </p>
             </div>
 
             <div className="bg-widget-bg p-4 rounded-xl">
                 <img
-                    src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_640,q_50/lsci/db/PICTURES/CMS/338700/338725.png"
+                    src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_640,q_50/lsci/db/PICTURES/CMS/338800/338865.png"
                     alt="Quote Unquote: who's saying what?"
                     className="rounded-lg"
                 />
