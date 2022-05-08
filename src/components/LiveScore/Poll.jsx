@@ -22,7 +22,7 @@ function Poll() {
                 " p-4 rounded-xl text-white " +
                 (hasVoted
                     ? isBlue
-                        ? "bg-blue-400"
+                        ? "bg-blue-600"
                         : "bg-purple-700"
                     : "bg-widget-bg")
             }
@@ -33,7 +33,7 @@ function Poll() {
                     onClick={handleClick1}
                 >
                     <img
-                        src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_160,q_50/lsci/db/PICTURES/CMS/333800/333885.png"
+                        src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_160,q_50/lsci/db/PICTURES/CMS/317900/317995.png"
                         alt=""
                         className="h-20"
                     />
