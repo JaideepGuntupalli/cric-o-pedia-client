@@ -12,12 +12,12 @@ function FactsSection() {
 
             <div className="bg-widget-bg p-4 rounded-xl">
                 <img
-                    src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_640,q_50/lsci/db/PICTURES/CMS/288200/288260.6.jpg"
-                    alt="On This Day: Deandra Dottin hits the first women's T20I ton"
+                    src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_320/lsci/db/PICTURES/CMS/337200/337278.6.jpg"
+                    alt="On This Day: Happy birthday, Kieron Pollard"
                     className="rounded-lg"
                 />
                 <p className="px-4 text-white pt-2">
-                    On This Day: Happy birthday, Jeetan Patel
+                    On This Day: Happy birthday, Kieron Pollard
                 </p>
             </div>
 

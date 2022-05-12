@@ -22,8 +22,8 @@ function Poll() {
                 " p-4 rounded-xl text-white " +
                 (hasVoted
                     ? isBlue
-                        ? "bg-blue-600"
-                        : "bg-purple-700"
+                        ? "bg-red-600"
+                        : "bg-yellow-600"
                     : "bg-widget-bg")
             }
         >
@@ -33,7 +33,7 @@ function Poll() {
                     onClick={handleClick1}
                 >
                     <img
-                        src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_160,q_50/lsci/db/PICTURES/CMS/317900/317995.png"
+                        src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/313400/313418.logo.png"
                         alt=""
                         className="h-20"
                     />
@@ -44,7 +44,7 @@ function Poll() {
                     onClick={handleClick2}
                 >
                     <img
-                        src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_160,q_50/lsci/db/PICTURES/CMS/313400/313419.logo.png"
+                        src="https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_80/lsci/db/PICTURES/CMS/317000/317003.png"
                         alt="Sunrisers Hyderabad logo"
                         className="h-20"
                     />
