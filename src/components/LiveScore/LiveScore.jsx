@@ -108,11 +108,7 @@ function LiveScore() {
                                         <img
                                             width="40"
                                             height="40"
-                                            alt={
-                                                data.data.bestPerformance
-                                                    .batsmen[0].player.image
-                                                    .longCaption
-                                            }
+                                            alt="lpol"
                                             className="ds-block"
                                             src={`https://img1.hscicdn.com/image/upload/f_auto,t_h_100/lsci${data.data.bestPerformance.batsmen[0].player.image.url}`}
                                         />
@@ -388,10 +384,7 @@ function LiveScore() {
                                     <img
                                         width="40"
                                         height="40"
-                                        alt={
-                                            data.data.bestPerformance.batsmen[1]
-                                                .player.image.longCaption
-                                        }
+                                        alt="lpol"
                                         className="ds-block"
                                         src={`https://img1.hscicdn.com/image/upload/f_auto,t_h_100/lsci${data.data.bestPerformance.batsmen[1].player.image.url}`}
                                     />
@@ -647,11 +640,7 @@ function LiveScore() {
                                         <img
                                             width="64"
                                             height="64"
-                                            alt={
-                                                data.data.bestPerformance
-                                                    .bowlers[0].player.image
-                                                    .longCaption
-                                            }
+                                            alt="lpol"
                                             className="ds-block"
                                             src={`https://img1.hscicdn.com/image/upload/f_auto,t_h_100_2x/lsci${data.data.bestPerformance.bowlers[0].player.image.url}`}
                                         />
