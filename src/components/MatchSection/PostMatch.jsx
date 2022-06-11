@@ -17,7 +17,7 @@ function PostMatch({
     return (
         <Link
             to={`score/${id}`}
-            className="bg-widget-bg flex gap-4 flex-col items-start rounded-lg p-6 w-1/4"
+            className="bg-widget-bg flex gap-4 flex-col items-start rounded-lg p-6 min-w-[20%] w-1/4"
         >
             <Pill status="post" result="KKR won by 7 wickets" />
             <div className="flex flex-col gap-2">

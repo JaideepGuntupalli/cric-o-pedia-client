@@ -16,7 +16,7 @@ function PreMatch({
     return (
         <Link
             to="#"
-            className="bg-widget-bg flex gap-4 flex-col items-start rounded-lg p-6 w-1/5"
+            className="bg-widget-bg flex gap-4 flex-col items-start rounded-lg p-6 min-w-[20%] w-1/5"
         >
             <Pill status="pre" startTime={startTime} />
             <div className="flex flex-col gap-2">

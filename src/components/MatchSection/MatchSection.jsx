@@ -14,7 +14,7 @@ function MatchSection() {
     return (
         <div className="w-4/5 mx-auto">
             <h1 className="font-bold text-3xl text-white my-6">Matches</h1>
-            <div className="flex gap-6">
+            <div className="flex gap-6 overflow-auto">
                 {isSuccess
                     ? data.data.map((ele) => {
                           if (ele.state === "POST") {
