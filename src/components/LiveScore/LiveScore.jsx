@@ -9,7 +9,7 @@ import LiveComm from "./LiveComm";
 import "./index.css";
 import io from "socket.io-client";
 
-const socket = io.connect("https://frozen-hamlet-50888.herokuapp.com");
+const socket = io.connect(`https://cric-o-pedia.onrender.com`);
 socket.emit("join_room", "1");
 
 function LiveScore() {
@@ -18,7 +18,7 @@ function LiveScore() {
     const id = params.id;
     const { data, isSuccess } = useQuery("live-score", async () => {
         return await axios.get(
-            ` https://frozen-brook-98254.herokuapp.com/score?matchId=${id}`
+            `https://cric-o-pedia.onrender.com/score?matchId=${id}`
         );
     });
 

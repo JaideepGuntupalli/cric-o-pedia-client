@@ -7,9 +7,7 @@ import { useState } from "react";
 
 function MatchSection() {
     const { data, isSuccess } = useQuery("home-matches", async () => {
-        return await axios.get(
-            " https://frozen-brook-98254.herokuapp.com/homeMatches"
-        );
+        return await axios.get(`https://cric-o-pedia.onrender.com/homeMatches`);
     });
 
     const types = new Set();

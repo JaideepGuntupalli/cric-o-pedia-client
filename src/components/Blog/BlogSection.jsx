@@ -4,9 +4,7 @@ import axios from "axios";
 
 function BlogSection() {
     const { data, isSuccess } = useQuery("news-articles", async () => {
-        return await axios.get(
-            " https://frozen-brook-98254.herokuapp.com/news"
-        );
+        return await axios.get("https://cric-o-pedia.onrender.com/news");
     });
 
     let key = 0;
